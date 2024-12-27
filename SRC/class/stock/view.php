@@ -171,6 +171,7 @@ function subStockView($param)
 					$note        = htmlspecialchars($row[16]);
 				?>
 					<tr>
+						
 						<td class="list_td<?php print $i; ?>"><?php print $charge; ?></td>
 						<td class="list_td<?php print $i; ?>"><?php print $rank; ?></td>
 						<td class="list_td<?php print $i; ?>"><?php print $insDT; ?></td>
@@ -215,7 +216,7 @@ function subStockEditView($param)
 	</script>
 
 	<h1>仕入<?php print $param["purpose"] ?></h1>
-
+	
 	<form name="form" id="form" action="index.php" method="get">
 		<input type="hidden" name="act" />
 		<input type="hidden" name="sDel" value="<?php print $param["sDel"] ?>" />
