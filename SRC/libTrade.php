@@ -303,7 +303,7 @@ function subTradeEdit()
 		<?php
 		if ($tradeNo) {
 		?>
-			<a href="javascript:fnTradeDeleteCheck(<?php print $tradeNo; ?>);"><img src="./images/btn_del.png" /></a>
+			<a href="javascript:form.act.value='tradeDelete';fnTradeDeleteCheck(<?php print $tradeNo; ?>);"><img src="./images/btn_del.png" /></a>
 		<?php
 		}
 		?>
