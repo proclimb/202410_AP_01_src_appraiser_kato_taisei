@@ -54,7 +54,7 @@ function fnSqlArticleEdit($articleNo)
 {
 	$sql  = "SELECT ARTICLE, ROOM, KEYPLACE, ADDRESS, ARTICLENOTE, KEYBOX, DRAWING, SELLCHARGE, DEL";
 	$sql .= " FROM TBLARTICLE";
-	$sql .= " WHERE ARTICLENO = 1";
+	$sql .= " WHERE ARTICLENO = $articleNo";
 
 	return ($sql);
 }
@@ -70,7 +70,7 @@ function fnSqlArticleUpdate($articleNo, $article, $room, $keyPlace, $address, $a
 	$sql .= " SET ARTICLE = '$article'";
 	$sql .= ",ROOM = '$room'";
 	$sql .= ",KEYPLACE = '$keyPlace'";
-	$sql .= ",ADDRESS = '$address";
+	$sql .= ",ADDRESS = '$address'";
 	$sql .= ",ARTICLENOTE = '$articleNote'";
 	$sql .= ",KEYBOX = '$keyBox'";
 	$sql .= ",DRAWING = '$drawing'";
