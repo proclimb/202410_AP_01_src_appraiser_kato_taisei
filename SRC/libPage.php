@@ -6,7 +6,7 @@ function fnPage($c,$p,$a){
 	$pages = (int)(($c - 1) / PAGE_MAX ) + 1;
 
 	if($pages < $p){
-		$p--;
+		$p = $pages;
 	}
 
 	if($p > 1 && $pages > 1){

@@ -110,7 +110,7 @@ function subStockView($param)
 			</table>
 		</div>
 
-		<input type="image" src="./images/btn_search.png" onclick="form.act.value='stockEditComplete';form.submit();" />
+		<input type="image" src="./images/btn_search.png" onclick="form.act.value='stockSearch';form.sPage.value=1;form.submit();" />
 
 		<hr />
 
@@ -125,7 +125,7 @@ function subStockView($param)
 
 		$count = $row[0];
 
-		$sPage = fnPage($count, $param["sPage"], 'stockSearch');
+		$param["sPage"] = fnPage($count, $param["sPage"], 'stockSearch');
 		?>
 
 		<div class="list">
@@ -244,8 +244,18 @@ function subStockEditView($param)
 		<table border="0" cellpadding="5" cellspacing="1">
 			<tr>
 				<th>除外</th>
-				<td><input type="radio" name="del" value="1" checked /> 非除外
-					<input type="radio" name="del" value="0" /> 除外
+				<td>
+					<?php 
+					$check1 = "";
+					$check2 = "";
+					if ($param["del"] == '0'){
+						$check2 = "checked";
+					}else{
+						$check1 = "checked";
+					}
+					?>
+					<input type="radio" name="del" value="1" <?php print $check1; ?> /> 非除外
+					<input type="radio" name="del" value="0" <?php print $check2; ?> /> 除外
 				</td>
 			</tr>
 			<tr>
