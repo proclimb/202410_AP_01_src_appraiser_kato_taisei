@@ -14,27 +14,27 @@ function fnSqlArticleList($flg, $sDel, $sArticle, $sRoom, $sKeyPlace, $sArticleN
 	}
 	$sql .= " FROM TBLARTICLE";
 	$sql .= " WHERE DEL = $sDel";
-	if ($sArticle) {
-		$sql .= " OR ARTICLE LIKE '%$sArticle$%'";
-	}
-	if ($sRoom) {
-		$sql .= " OR ROOM LIKE '%$sRoom%'";
-	}
-	if ($sKeyPlace) {
-		$sql .= " OR KEYPLACE LIKE '%$sKeyPlace%'";
-	}
-	if ($sArticleNote) {
-		$sql .= " OR ARTICLENOTE LIKE '%$sArticleNote%'";
-	}
-	if ($sKeyBox) {
-		$sql .= " OR KEYBOX LIKE '%l$sKeyBox%'";
-	}
-	if ($sDrawing) {
-		$sql .= " OR DRAWING LIKE '%$sDrawing%'";
-	}
-	if ($sSellCharge) {
-		$sql .= " OR SELLCHARGE LIKE '%$sSellCharge%'";
-	}
+	    if ($sArticle) {
+        $sql .= " AND ARTICLE LIKE '%$sArticle%'";
+    }
+    if ($sRoom) {
+        $sql .= " AND ROOM LIKE '%$sRoom%'";
+    }
+    if ($sKeyPlace) {
+        $sql .= " AND KEYPLACE LIKE '%$sKeyPlace%'";
+    }
+    if ($sArticleNote) {
+        $sql .= " AND ARTICLENOTE LIKE '%$sArticleNote%'";
+    }
+    if ($sKeyBox) {
+        $sql .= " AND KEYBOX LIKE '%$sKeyBox%'";
+    }
+    if ($sDrawing) {
+        $sql .= " AND DRAWING LIKE '%$sDrawing%'";
+    }
+    if ($sSellCharge) {
+        $sql .= " AND SELLCHARGE LIKE '%$sSellCharge%'";
+    }
 	if ($orderBy) {
 		$sql .= " ORDER BY $orderBy $orderTo";
 	}
