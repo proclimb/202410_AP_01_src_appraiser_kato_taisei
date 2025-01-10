@@ -209,6 +209,7 @@ function subArticleEdit()
 		<input type="hidden" name="orderTo" value="<?php print $orderTo ?>" />
 		<input type="hidden" name="sPage" value="<?php print $sPage ?>" />
 		<input type="hidden" name="articleNo" value="<?php print $articleNo ?>" />
+		
 
 		<table border="0" cellpadding="5" cellspacing="1">
 			<tr>
