@@ -3,12 +3,12 @@
 //
 function fnGuideEditCheck() {
   var cnt = document.form.cnt.value;
-  for (i = 1; i < cnt; i++) {
+  for (i = 0; i < cnt; i++) {
     var msg = "";
     if (cnt > 1) {
       msg = i + 1 + "件目の";
     }
-    tmp = getEditObject(i, "guideStart");
+    tmp = getEditObject(i, "guideStartDT");
     if (tmp.value == "") {
       alert(msg + "案内日(開始日付)を入力してください");
       return;
@@ -35,10 +35,10 @@ function fnGuideEditCheck() {
     if (isLength(100, msg + "担当", getEditObject(i, "charge"))) {
       return;
     }
-    if (isLength(100, msg + "営業店", getEditObject(i, "name"))) {
+    if (isLength(100, msg + "営業店", getEditObject(i, "branch"))) {
       return;
     }
-    if (isLength(100, msg + "業者名", getEditObject(i, "branch"))) {
+    if (isLength(100, msg + "業者名", getEditObject(i, "name"))) {
       return;
     }
     if (isLength(100, msg + "TEL", getEditObject(i, "tel"))) {
@@ -47,7 +47,7 @@ function fnGuideEditCheck() {
     if (isLength(100, msg + "FAX", getEditObject(i, "fax"))) {
       return;
     }
-    if (isLength(10, msg + "結果", getEditObject(i, "result"))) {
+    if (isLength(1000, msg + "結果", getEditObject(i, "result"))) {
       return;
     }
     if (
